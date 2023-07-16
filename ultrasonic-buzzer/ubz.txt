@@ -1,0 +1,9 @@
+This code is designed for a two-chip system using MSP430 microcontrollers. The system includes an ultrasonic sensor connected to Chip 1 and an LED display connected to Chip 2. The purpose of the code is to measure distance using the ultrasonic sensor and display it on the LED display.
+
+The code consists of two separate programs: one for Chip 1 and one for Chip 2. Chip 1 is responsible for reading the distance using the ultrasonic sensor and transmitting the data to Chip 2 using UART communication. Chip 2 receives the distance data and displays it on the LED display.
+
+The code includes functions to set up UART communication, timer, PWM (Pulse Width Modulation), ultrasonic sensor pins, and the buzzer. It also includes functions to receive and transmit data via UART, control the LED display, and set up the ports and pins for each chip.
+
+The main functions for Chip 1 and Chip 2 are designed to run in an infinite loop. Chip 1 reads the distance using the ultrasonic sensor, processes the data, and transmits it to Chip 2. Chip 2 receives the distance data and displays it on the LED display using the Control_Dx function.
+
+The purpose of this code is to demonstrate the integration of an ultrasonic sensor, UART communication, and LED display in a two-chip system. It showcases the use of various peripherals and functions to measure distance and provide visual feedback on the LED display.
