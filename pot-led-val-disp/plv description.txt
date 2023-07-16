@@ -1,0 +1,14 @@
+This code is designed to control a 4-digit 7-segment LED display based on the input from a potentiometer. The code is written for the MSP430 microcontroller.
+
+
+1. The code includes the necessary header files and defines the required functions for ADC setup and LED display control.
+
+2. The `ADC_Setup()` function configures the ADC control registers to set the reference voltage, sampling time, and input channel. In this code, the reference voltage is set to VCC and VSS, the sampling time is 16 ADC10CLK cycles, and input channel 3 is selected.
+
+3. The `DisplayLED()` function takes a single-digit number as input and uses a switch statement to determine which LED segments to turn on to display the corresponding digit on the 7-segment LED display. The LED segments are controlled through Port 2 of the microcontroller.
+
+4. The `Control_Dx()` function is responsible for displaying the numbers on the 4-digit LED display. It takes the ADC reading as input and determines the number of digits to display based on the input value. It uses the `DisplayLED()` function to sequentially display the digits on each digit position, with appropriate delays between each display. The display control pins are configured through Port 1 of the microcontroller.
+
+5. The `main()` function initializes the necessary variables and pins for the program. It configures the GPIOs for LED display control and ADC input. It also includes an infinite loop that continuously reads the ADC value, checks for oscillation patterns, and calls the `Control_Dx()` function to update the LED display.
+
+This code provides a basic framework for controlling a 4-digit 7-segment LED display using a potentiometer input. It can be used as a starting point for developing more complex applications involving LED displays and analog inputs with the MSP430 microcontroller.
