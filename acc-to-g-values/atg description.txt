@@ -1,0 +1,33 @@
+This code is designed to read and display the values from an accelerometer using an MSP430 microcontroller. It provides two modes: raw values and G-scale values. The code uses interrupts, timers, and ADC (Analog-to-Digital Converter) to read the accelerometer values and display them on a 4-digit 7-segment LED display.
+
+Here's a brief description of the code:
+
+1. The code includes the necessary header files and defines global variables.
+
+2. The `Port_setup()` function sets up the GPIO pins for the button, interrupt, and timer.
+
+3. The `ADC_Setup()` function configures the ADC control registers to set the reference voltage, sampling time, and input channels for the accelerometer.
+
+4. The `initTimer_A()` function initializes and starts the Timer A.
+
+5. The `PORT1_ISR()` function is the interrupt service routine for the button press. It toggles the `button_pressed` variable between 0 and 1, which selects the mode for displaying either raw or G-scale values.
+
+6. The `Timer_A_CCR0_ISR()` function is the interrupt service routine for the timer. It increments the `OFCount` variable, which is used to switch between X, Y, and Z axis displays.
+
+7. The `DisplayLED()` function takes a single-digit number as input and uses a switch statement to determine which LED segments to turn on to display the corresponding digit on the 7-segment LED display.
+
+8. The `Control_Dx()` function is responsible for displaying the numbers on the 4-digit LED display. It takes the ADC reading and axis as input and determines the number of digits to display based on the input value. It uses the `DisplayLED()` function to sequentially display the digits on each digit position.
+
+9. The `correct_osciallations_raw()` function checks for oscillations in the raw values and adjusts the display to prevent flickering.
+
+10. The `Display_g()` function displays the G-scale values on the LED display. It calculates the G-scale value based on the ADC reading and displays the digits accordingly.
+
+11. The `correct_osciallations_g()` function checks for oscillations in the G-scale values and adjusts the display to prevent flickering.
+
+12. The `rawValues()` function reads and displays the raw values from the accelerometer for each axis, with a delay of 3 seconds between each axis.
+
+13. The `gValues()` function reads and displays the G-scale values from the accelerometer for each axis, with a delay of 3 seconds between each axis.
+
+14. The `main()` function initializes the necessary variables, sets up the ports, ADC, and timer, enables interrupts, and enters an infinite loop that toggles between raw and G-scale value modes based on the button press.
+
+This code provides a framework for reading and displaying accelerometer values using an MSP430 microcontroller. It can be used as a starting point for developing applications involving accelerometer-based motion sensing and display capabilities.
