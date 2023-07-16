@@ -1,0 +1,13 @@
+The objective of this project is to connect two MSP430G2553 together. An ultrasonic sensor is connected to chip 1. It is used to find the
+distance in cm and display it on Quad-Digit 7 segment LED connected to chip 2 using UART communication. An accelerometer I also is
+connected, and it displays the x and y axis is a 0–90-degree range on the Quad-Digit 7 segment LED using UART connections. Two buttons are present. One to switch between ultrasonic sensor
+and accelerometer and the other one is used to select a distance. A buzzer is used to buzz when the distance selected by the user is
+displayed or if the accelerometer is placed on a flat surface or when the x and y-axis read 0 on the Quad-Digit 7 segment LED.
+All these components were soldered on a perforated board to build an embedded system which runs on a battery.
+It is designed to control various peripherals and perform specific tasks. The main functionality of the code includes setting up and configuring UART communication, timers, PWM for a buzzer, ADC for reading analog values, and handling interrupts for buttons and sensors.
+
+The code sets up two different configurations based on the state of a pin. It initializes the required peripherals and pins accordingly. One configuration is for an ultrasonic sensor, where it measures distances and sends the readings through UART. The other configuration is for an accelerometer, where it reads values from the sensor and sends them through UART. The code also handles button presses to control different functionalities.
+
+The program continuously runs in an infinite loop, performing the specified tasks based on the configuration and button inputs. It includes functions to set up and configure various peripherals, correct oscillations in ADC readings, control and display LED digits, and transmit and receive data through UART.
+
+Overall, this code serves as a basic framework for controlling multiple peripherals and performing specific tasks using the MSP430 microcontroller.
