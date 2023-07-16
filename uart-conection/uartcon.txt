@@ -1,0 +1,7 @@
+This code is a pair of programs designed for a two-chip system consisting of MSP430G2553 microcontrollers. The chips are connected to each other, with one chip serving as the ADC (Analog-to-Digital Converter) and transmitter, and the other chip as the receiver and display driver for a quad-digit 7-segment LED display.
+
+The setup involves two separate programs: one for Chip 1 and one for Chip 2. Chip 1 is connected to a potentiometer and is responsible for ADC conversion. It transmits the ADC value using UART (Universal Asynchronous Receiver/Transmitter). Chip 2 receives the ADC value and displays it on the LED display.
+
+The code includes functions to set up the ADC, UART communication, and LED display. It also implements a function to correct oscillations in the ADC readings. The main functions for Chip 1 and Chip 2 are designed to run in an infinite loop, continually reading and transmitting the ADC value (Chip 1) or receiving and displaying the ADC value (Chip 2).
+
+The purpose of this code is to demonstrate the communication and data transfer between two MSP430 microcontrollers and showcase the use of ADC and UART functionalities.
